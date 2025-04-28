@@ -6,4 +6,7 @@ class CountrySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CountryModel
-        fields = ['name_country']
+        fields = ['name_country', 'name_currency']
+        extra_kwargs = {
+            'name_currency': {'many': True}
+        }
